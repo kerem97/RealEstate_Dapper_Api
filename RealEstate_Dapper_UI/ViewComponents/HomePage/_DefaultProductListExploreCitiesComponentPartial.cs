@@ -16,7 +16,7 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44324/api/PopularLocation");
+            var responseMessage = await client.GetAsync("https://localhost:7245/api/PopularLocation");
 
             if (responseMessage.IsSuccessStatusCode)
             {
