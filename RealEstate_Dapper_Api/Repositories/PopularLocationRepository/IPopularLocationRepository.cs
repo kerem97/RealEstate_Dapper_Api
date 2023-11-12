@@ -7,10 +7,10 @@ namespace RealEstate_Dapper_Api.Repositories.PopularLocationRepository
     public interface IPopularLocationRepository
     {
         Task<List<ResultPopularLocationDto>> GetAllLocationAsync();
-        //void CreateBottomGrid(CreateBottomGridDto createBottomGridDto);
-        //void DeleteBottomGrid(int id);
-        //void UpdateBottomGrid(UpdateBottomGridDto updateBottomGridDto);
+        void CreatePopularLocation(CreatePopularLocationDto createPopularLocationDto);
+        void DeletePopularLocation(int id);
+        void UpdatePopularLocation(UpdatePopularLocationDto updatePopularLocationDto);
 
-        //Task<GetBottomGridDto> GetBottomGrid(int id);
+        Task<GetByIDPopularLocationDto> GetPopularLocation(int id);
     }
 }
