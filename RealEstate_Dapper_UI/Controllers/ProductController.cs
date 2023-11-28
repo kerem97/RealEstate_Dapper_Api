@@ -53,13 +53,32 @@ namespace RealEstate_Dapper_UI.Controllers
 
             return View();
         }
-        [HttpPost]
 
-        public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
+
+        public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse(int id)
         {
+            var client = _httpClientFactory.CreateClient();
+
+            var responseMessage = await client.GetAsync("https://localhost:7245/api/Products/ProductDealOfTheDayStatusChangeToFalse/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+
+            }
             return View();
         }
+        public async Task<IActionResult> ProductDealOfTheDayChangeStatusToTrue(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
 
+            var responseMessage = await client.GetAsync("https://localhost:7245/api/Products/ProductDealOfTheDayChangeStatusToTrue/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+
+            }
+            return View();
+        }
 
     }
 }
